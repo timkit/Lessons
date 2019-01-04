@@ -1,12 +1,5 @@
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
+
 
 //On GitHub
 public class learn9 {
@@ -82,7 +75,7 @@ public class learn9 {
 		StringBuffer buffer = new StringBuffer();
 		try {
 			FileInputStream myFile = new FileInputStream("text.txt");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(myFile, "Windows-1251"));			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(myFile, "Windows-1251"));
 			int ch;
 			while ((ch = reader.read()) > -1) {
 				buffer.append((char) (ch));
@@ -97,7 +90,7 @@ public class learn9 {
 
 	public static void text_w() {
 		try {
-			String myAdress = "Текст";
+			String myAdress = "Текст файла сгенерирован автоматически";
 			FileOutputStream myFile = new FileOutputStream("text.txt");
 			Writer out = new BufferedWriter(new OutputStreamWriter(myFile, "Windows-1251"));
 			out.write(myAdress);
@@ -113,7 +106,7 @@ public class learn9 {
 
 		// file_r();
 		// file_w();
-		//text_r();
+		// text_r();
 		text_w();
 	}
 
