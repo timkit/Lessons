@@ -82,8 +82,7 @@ public class learn9 {
 		StringBuffer buffer = new StringBuffer();
 		try {
 			FileInputStream myFile = new FileInputStream("text.txt");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(myFile, "Windows-1251"));
-			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(myFile, "Windows-1251"));			
 			int ch;
 			while ((ch = reader.read()) > -1) {
 				buffer.append((char) (ch));
@@ -102,6 +101,7 @@ public class learn9 {
 			FileOutputStream myFile = new FileOutputStream("text.txt");
 			Writer out = new BufferedWriter(new OutputStreamWriter(myFile, "Windows-1251"));
 			out.write(myAdress);
+			out.flush();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -113,8 +113,8 @@ public class learn9 {
 
 		// file_r();
 		// file_w();
-		text_r();
-		//text_w();
+		//text_r();
+		text_w();
 	}
 
 }
