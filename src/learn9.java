@@ -1,13 +1,16 @@
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 //On GitHub
 public class learn9 {
-	// IO STREAM file bytes i/o 
+	// IO STREAM file bytes i/o
 	public static void file_r() {
 		// переменная ввода файлового потока
 		FileInputStream myFile = null;
@@ -17,7 +20,7 @@ public class learn9 {
 			// создание потока ввода в файл abc.dat
 			myFile = new FileInputStream("xyz.dat");
 			// создание буфера для ускоренного чтения порциями байтов
-			buff= new BufferedInputStream(myFile);
+			buff = new BufferedInputStream(myFile);
 			// конец файла
 			boolean eof = false;
 			// пока не достигнут конец файла
@@ -74,35 +77,44 @@ public class learn9 {
 		}
 	}
 
-	//IO STREAM Text i/o
-	public static void text_r () {
-		StringBuffer buffer= new StringBuffer();
+	// IO STREAM Text i/o
+	public static void text_r() {
+		StringBuffer buffer = new StringBuffer();
 		try {
-			FileInputStream myFile=new FileInputStream("text.txt");
-			InputStreamReader inputstreamreader=new InputStreamReader(myFile, "Windows-1251");
-			BufferedReader reader = new BufferedReader(inputstreamreader);
+			FileInputStream myFile = new FileInputStream("text.txt");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(myFile, "Windows-1251"));
+			
 			int ch;
-			while((ch=reader.read())>-1) {
-				buffer.append((char)(ch));
+			while ((ch = reader.read()) > -1) {
+				buffer.append((char) (ch));
 			}
 			String result = buffer.toString();
 			System.out.println(result);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			System.out.println(e);
 		}
-		
-		
+
 	}
+
 	public static void text_w() {
-		
+		try {
+			String myAdress = "Текст";
+			FileOutputStream myFile = new FileOutputStream("text.txt");
+			Writer out = new BufferedWriter(new OutputStreamWriter(myFile, "Windows-1251"));
+			out.write(myAdress);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
 	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	//	file_r();
+		// file_r();
 		// file_w();
 		text_r();
+		//text_w();
 	}
 
 }
