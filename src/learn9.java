@@ -94,6 +94,9 @@ public class learn9 {
 		
 		
 	}
+	public static void text_w() {
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
