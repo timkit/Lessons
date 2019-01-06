@@ -17,7 +17,7 @@ public class HomeWork_14 {
 			System.out.format("File %s, Size: %d %n",ze.getName(), ze.getSize());
 			
 		}
-		zis.close();	
+		zis.close();		
 	}
 	catch (Exception e) {
 		e.printStackTrace();

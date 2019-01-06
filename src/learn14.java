@@ -87,11 +87,11 @@ public class learn14 {
 
 	public static void text_w() {
 		try {
-			String myAdress = "Текст файла сгенерирован автоматически";
+			String myAdress = "Текст файла сгенерирован автоматически!!!";
 			FileOutputStream myFile = new FileOutputStream("text.txt");
 			Writer out = new BufferedWriter(new OutputStreamWriter(myFile, "Windows-1251"));
-			out.write(myAdress);
-			out.flush();
+			out.write(myAdress);			
+			out.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
