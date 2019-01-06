@@ -1,7 +1,6 @@
 import java.io.*;
 
-public class learn9_Java7 {
-
+public class learn14_Java7 {
 	public static void file_r() {
 		// переменная ввода файлового потока
 		BufferedInputStream buff = null;
@@ -26,13 +25,12 @@ public class learn9_Java7 {
 		// Вызываем исключение в случае неудачи
 		catch (IOException e) {
 			System.out.println("Could not read file: " + e.toString());
-
 		}
-
 	}
+
 	public static void file_w() {
-		int a[] = {212, 5, 89, 88, 48, 72 };
-		try (FileOutputStream myFile = new FileOutputStream("xyz.dat")){
+		int a[] = { 212, 5, 89, 88, 48, 72 };
+		try (FileOutputStream myFile = new FileOutputStream("xyz.dat")) {
 			for (int i = 0; i < a.length; i++) {
 				myFile.write(a[i]);
 			}
@@ -44,9 +42,6 @@ public class learn9_Java7 {
 	}
 
 	public static void main(String[] args) {
-
-file_r();
-
+		file_r();
 	}
-
 }

@@ -1,8 +1,7 @@
 import java.io.*;
 
-
 //On GitHub
-public class learn9 {
+public class learn14 {
 	// IO STREAM file bytes i/o
 	public static void file_r() {
 		// переменная ввода файлового потока
@@ -52,12 +51,10 @@ public class learn9 {
 			for (int i = 0; i < a.length; i++) {
 				myFile.write(a[i]);
 			}
-
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Could not write file: " + e.toString());
 		} finally {
-
 			if (myFile != null) {
 				try {
 					myFile.close();
@@ -98,16 +95,13 @@ public class learn9 {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		// file_r();
 		// file_w();
 		// text_r();
 		text_w();
 	}
-
 }
