@@ -8,7 +8,7 @@ public class HomeWork_14 {
 
 	public static void ZipRead() {
 	
-		String fn="D:\\JavaProjects\\Lessons\\arx.zip";
+		String fn="E:\\JavaProjects\\Lessons\\arx.zip";
 
 	try(ZipInputStream zis =new ZipInputStream((new BufferedInputStream(new FileInputStream(fn))), Charset.forName("Windows-1251"))){
 		
